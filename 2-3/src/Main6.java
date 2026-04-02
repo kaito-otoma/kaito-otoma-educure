@@ -6,7 +6,7 @@ public class Main6 {
         
         
         price = 1200 ;
-        System.out.print("更新後の価格:"+price+"円");
+        System.out.print("\n更新後の価格:"+price+"円");
     
     }
 }
