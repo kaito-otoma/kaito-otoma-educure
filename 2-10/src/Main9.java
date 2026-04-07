@@ -1,18 +1,29 @@
 public class Main9 {
      public static void main(String[] args) {
         int num1 = 10;
-        int num2 = 5;
-        char operator = '+';  // +, -, *, / のいずれか
-        switch(num1){
-            case 1: //1-10
-                switch (num2){
-                    case 1://1-10
-                        switch (char){
-                            case +
-                                System.out.println("2");
-                                break;
-                        }     
-            }
-        }
+        int num2 = 0;
+        char operator = '/';  
+
+        switch(operator){
+            case '+':
+                System.out.println(num1 + num2);
+                break;
+            case '-':
+                System.out.println(num1 - num2);
+                break;
+            case '*':
+                System.out.println(num1 * num2);
+                break;
+            case '/':
+                if (num2 < 0) {
+                System.out.println("エラー：０で割ることはできません");
+                    }
+                System.out.println(num1 / num2);
+                break;
+
+            default:
+                System.out.println("エラー：無効な演算子です");
+                break;            
+        }     
     }
 }
