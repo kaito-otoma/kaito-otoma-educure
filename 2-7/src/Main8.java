@@ -5,8 +5,8 @@ public class Main8 {
       Scanner scanner = new Scanner(System.in);
 
          System.out.println("攻撃力を入力してください：");
-         String inpattack = scanner.nextLine();
-         int attackPower = Integer.parseInt(inpattack);
+         String inpAttack = scanner.nextLine();
+         int attackPower = Integer.parseInt(inpAttack);
 
          System.out.println("防御力を入力してください：");
          String inpDefense = scanner.nextLine();
@@ -14,10 +14,10 @@ public class Main8 {
 
         int damage = attackPower - defensePower;
         double criticalPercent = damage * 1.5;
-        int criticaldamage = (int)criticalPercent;
+        int criticalDamage = (int)criticalPercent;
 
         System.out.println("通常ダメージ：" + damage);
-        System.out.println("クリティカルダメージ：" + criticaldamage);
+        System.out.println("クリティカルダメージ：" + criticalDamage);
 
         scanner.close();
      }
