@@ -6,6 +6,6 @@ public class Main4 {
         double T =G * B; //合計金額（小数点あり）
         int Ta =(int)T; //合計金額（小数点切り捨て）
 
-        System.out.println("合計金額：" + Ta + "円です。");
+        System.out.println("合計金額：" + Ta + "円です");
     }
 }
