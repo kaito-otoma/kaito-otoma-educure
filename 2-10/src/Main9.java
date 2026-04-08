@@ -15,12 +15,13 @@ public class Main9 {
                 System.out.println(num1 * num2);
                 break;
             case '/':
-                if (num2 < 0) {
+                if (num2 == 0) {
                 System.out.println("エラー：０で割ることはできません");
-                    }
+                }
+                else{
                 System.out.println(num1 / num2);
+                }
                 break;
-
             default:
                 System.out.println("エラー：無効な演算子です");
                 break;            
