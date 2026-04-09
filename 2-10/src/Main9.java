@@ -6,20 +6,20 @@ public class Main9 {
 
         switch(operator){
             case '+':
-                System.out.println(num1 + num2);
+                System.out.println("結果：" + (num1 + num2));
                 break;
             case '-':
-                System.out.println(num1 - num2);
+                System.out.println("結果：" + (num1 - num2));
                 break;
             case '*':
-                System.out.println(num1 * num2);
+                System.out.println("結果：" + num1 * num2);
                 break;
             case '/':
                 if (num2 == 0) {
                 System.out.println("エラー：０で割ることはできません");
                 }
                 else{
-                System.out.println(num1 / num2);
+                System.out.println("結果：" + num1 / num2);
                 }
                 break;
             default:
