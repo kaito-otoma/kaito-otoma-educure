@@ -41,7 +41,7 @@ public class Main4 {
         }
 
         //三角形種類判定
-        if (shortSide + middleSide < longSide) {
+        if (shortSide + middleSide <= longSide) {
             System.out.println("三角形ではない");
         } else if (shortSide == middleSide && middleSide == longSide) {
             System.out.println("正三角形");
