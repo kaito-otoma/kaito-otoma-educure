@@ -3,10 +3,9 @@ public class Main3 {
         double[] temperatures = {25.5, 26.0, 24.5, 26.5, 27.0, 25.0, 24.0};
         double totalTemperatuers = 0;
         
-        for (int hert = 0; hert < temperatures.length; hert++){
-            totalTemperatuers += temperatures[hert];
+        for (double hert : temperatures){
+            totalTemperatuers += hert;
         }
-
         double average = (double)totalTemperatuers / temperatures.length;
 
         System.out.println("月曜日:" + temperatures[0] + "度");
