@@ -1,20 +1,18 @@
 public class Main3 {
     public static void main(String[] args) {
         double[] temperatures = {25.5, 26.0, 24.5, 26.5, 27.0, 25.0, 24.0};
-        double totalTemperatuers = 0;
+        String[] week = {"月", "火", "水", "木", "金", "土", "日"};
+        double totalTemperatures = 0;
         
-        for (double hert : temperatures){
-            totalTemperatuers += hert;
+        for (double temp : temperatures){
+            totalTemperatures += temp;
         }
-        double average = (double)totalTemperatuers / temperatures.length;
+            double average = totalTemperatures / temperatures.length;
 
-        System.out.println("月曜日:" + temperatures[0] + "度");
-        System.out.println("火曜日:" + temperatures[1] + "度");
-        System.out.println("水曜日:" + temperatures[2] + "度");
-        System.out.println("木曜日:" + temperatures[3] + "度");
-        System.out.println("金曜日:" + temperatures[4] + "度");
-        System.out.println("土曜日:" + temperatures[5] + "度");
-        System.out.println("日曜日:" + temperatures[6] + "度");
-        System.out.println("平均気温:" + average + "度");
+        for (int day = 0; day < temperatures.length; day++) {
+
+            System.out.println(week[day] + "曜日 : " + temperatures[day] + "度");
     }
+    System.out.println("平均気温:" + average + "度");
+        }
 }

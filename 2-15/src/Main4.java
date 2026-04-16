@@ -6,6 +6,8 @@ public class Main4 {
         int[][] check = {
             {0,2},{1,1},{2,5},{3,0},{3,5},{4,2}
         };
+
+        System.out.println("予約前の座席状況");
         for (int reservation = 0; reservation < check.length; reservation++){
             int reservationLine = check[reservation][0];
             int reservationColumn = check[reservation][1];
@@ -34,12 +36,15 @@ public class Main4 {
         else {seats[seatsLines - 1][seatsColumns - 1] = 1;
             System.out.println(seatsLines + "行" + seatsColumns + "列" + "の座席を予約しました");
         }
-        scanner.close();
-        
         System.out.println("予約後の座席状況");
+        display(seats);
+        scanner.close();
+    }
+        
+        public static void display(int[][] seats) {
         for (int line =0; line <5; line++){
             for(int column =0; column <6; column++){
-            System.out.print("[" + seats[line][column] + "]");
+                System.out.print("[" + seats[line][column] + "]");
             }
             System.out.println();
 
