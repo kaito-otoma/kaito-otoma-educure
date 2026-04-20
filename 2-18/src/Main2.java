@@ -5,27 +5,16 @@ public class Main2 {
 
         scoreRank(score , scorePercent);
     }
-    public static void scoreRank(int score, int scorePrercent){
+    public static void scoreRank(int score, int scorePercent){
 
-        switch (scorePrercent) {
-            case 10:
-                System.out.println("成績:優");
-                break;
-            case 9:
-                System.out.println("成績:優");
-                break;
-            case 8:
-                System.out.println("成績:優");
-                break;
-            case 7:
-                System.out.println("成績:良");
-                break;
-            case 6:
-                System.out.println("成績:可");
-                break;
-            default:
-                System.out.println("成績:不可");
-                break;
+        if (score >= 80) {
+            System.out.println("成績:優");
+        } else if (score >= 70) {
+            System.out.println("成績:良");
+        } else if (score >= 60) {
+            System.out.println("成績:可");
+        } else {
+            System.out.println("成績:不可");
         }
     }
 }
