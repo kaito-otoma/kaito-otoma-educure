@@ -13,7 +13,6 @@ public class Main4 {
     }
     public static int[] totalPrices(int[] prices , int[] quantities){
         int[] totals = new int[prices.length];
-        int[] taxs = {0, 0, 0};
         double taxPercent = 0.1;
         
         for (int price = 0; price < prices.length; price++) {

@@ -1,11 +1,10 @@
 public class Main2 {
     public static void main(String[] args) {
         int score = 90;  // 学生の得点
-        int scorePercent = score/10;
 
-        scoreRank(score , scorePercent);
+        scoreRank(score);
     }
-    public static void scoreRank(int score, int scorePercent){
+    public static void scoreRank(int score){
 
         if (score >= 80) {
             System.out.println("成績:優");
