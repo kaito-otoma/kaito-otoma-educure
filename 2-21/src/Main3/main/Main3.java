@@ -1,9 +1,6 @@
 package Main3.main;
 
 public class Main3 {
-    public static void main(String[] args) {
-}
-
 public static void Calendar(int day, int hour, int minute, int year, int week, int month, int seconds) {
 
     String[] weekDays =  {" ", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
