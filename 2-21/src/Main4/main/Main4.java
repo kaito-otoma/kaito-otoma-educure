@@ -10,10 +10,7 @@ public class Main4 {
         Collections.sort(numbers);
         System.out.println("ソート後：" + numbers);
 
-        int min = numbers.get(0);
-        int max = numbers.get(numbers.size() - 1);
-
-        System.out.println("最大値:" + max);
-        System.out.println("最小値:" + min);
+        System.out.println("最大値:" + Collections.max(numbers));
+        System.out.println("最小値:" + Collections.min(numbers));
     }
 }

@@ -5,6 +5,6 @@ public class Main2 {
 
         System.out.println("半径が" + radius + "の場合");
         System.out.println("円の面積 :" + radius * radius * Math.PI);
-        System.out.println("円周 :" + radius * Math.PI);
+        System.out.println("円周 :" + radius * 2 *  Math.PI);
     }
 }
