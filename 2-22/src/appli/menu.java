@@ -11,7 +11,6 @@ public class menu {
         int count = 0;        
 
         System.out.print("開始");
-        scanner.nextLine(); 
 
         while (true) {
             System.out.println("メニュー選択");
@@ -26,7 +25,7 @@ public class menu {
             count++;
         } else if (input.equals("2")) {
             if (count == 0) {
-            System.out.print("まだ単語が登録されていません。");
+            System.out.println("単語が登録されていません。");
         } else {    
             System.out.println("クイズ実施");
             quiz.start(englishWord, japaneseWord);  // Quizクラスのメソッドを呼ぶ

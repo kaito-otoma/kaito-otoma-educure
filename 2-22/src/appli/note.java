@@ -11,9 +11,9 @@ public class note {
             System.out.println("2.いいえ");
             String input = scanner.nextLine();
 
-        if (input.equals("1")) {
+        if (count <= 20) {
             break;
-        } else if (input.equals("2")) {
+        } else if (count > 20) {
             System.out.println("エラー表示: 登録可能な単語数は20個までです");
             return;
         } else {

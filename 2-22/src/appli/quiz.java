@@ -17,10 +17,10 @@ public class quiz {
         boolean modelAnswer = answer.equals(japaneseWord[test]);
 
         if (modelAnswer) {
-            System.out.println("正解");
+            System.out.println("正解です！");
             score++;
         }else{
-            System.out.println("不正解");
+            System.out.println("不正解です");
         }
         if (test < englishWord.length - 1) {
             System.out.println("全問終了？");
