@@ -20,7 +20,6 @@ public class menu {
             String input = scanner.nextLine();
 
         if (input.equals("1")) {
-            System.out.println("単語登録");
             note.start(englishWord, japaneseWord, count); // noteクラスのメソッドを呼ぶ
             count++;
         } else if (input.equals("2")) {
@@ -28,7 +27,7 @@ public class menu {
             System.out.println("単語が登録されていません。");
         } else {    
             System.out.println("クイズ実施");
-            quiz.start(englishWord, japaneseWord);  // Quizクラスのメソッドを呼ぶ
+            quiz.start(englishWord, japaneseWord, count);  // Quizクラスのメソッドを呼ぶ
         }
         } else if (input.equals("3")) {
             System.out.println("終了");
