@@ -20,8 +20,7 @@ public class menu {
             String input = scanner.nextLine();
 
         if (input.equals("1")) {
-            note.start(englishWord, japaneseWord, count); // noteクラスのメソッドを呼ぶ
-            count++;
+            count = note.start(englishWord, japaneseWord, count); // noteクラスのメソッドを呼ぶ
         } else if (input.equals("2")) {
             if (count == 0) {
             System.out.println("単語が登録されていません。");

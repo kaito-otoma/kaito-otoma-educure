@@ -9,7 +9,7 @@ public class quiz {
     int score = 0; 
     int totalQuestions = 0;
 
-    for (int test = 0; test < count; test++){
+    for (int test = 0; test < count && test < englishWord.length; test++){
         
         System.out.println("問題：" + englishWord[test]);
         System.out.print("解答：");
