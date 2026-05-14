@@ -4,8 +4,9 @@ public class Book {
     String title;
     boolean isLent;
 
-public String getTitle() {
-        return title;
+public String getTitle(String title) {
+    this.title = title;
+        return this.title;
     }
 
 public boolean isBorrowed() {
