@@ -4,14 +4,17 @@ public class Book {
     String title;
     boolean isLent;
 
-public String getTitle(String title) {
-    this.title = title;
+public void setTitle(String title){
+        this.title = title;
+    }
+
+public String getTitle() {
         return this.title;
     }
 
 public boolean isBorrowed() {
         return isLent;
-}
+    }
 
 public void lend() {
         if (isLent) {
