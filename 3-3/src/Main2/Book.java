@@ -25,7 +25,11 @@ public void lend() {
         }
     }
 public void returnBook() {
-        this.isLent = false;
-        System.out.println("本が返却されました");
+        if (this.isLent){
+            this.isLent = false;
+            System.out.println("本が返却されました");
+        } else {
+            return;
+        }
     }
 }
