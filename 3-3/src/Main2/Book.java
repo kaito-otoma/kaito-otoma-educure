@@ -29,7 +29,7 @@ public void returnBook() {
             this.isLent = false;
             System.out.println("本が返却されました");
         } else {
-            return;
+            System.out.println("この本は貸出中ではありません");
         }
     }
 }
