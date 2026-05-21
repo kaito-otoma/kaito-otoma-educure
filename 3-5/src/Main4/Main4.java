@@ -2,10 +2,8 @@ package Main4;
 
 public class Main4 {
     public static void main(String[] args) {
-        Product item = new Product(80000);
-        item.name = "ノートパソコン";
+        Product item = new Product("ノートパソコン", 80000);
 
-        System.out.println("商品名:" + item.name);
-        System.out.println("価格:" + item.price + "円");
+        item.displayInfo();
     }
 }
