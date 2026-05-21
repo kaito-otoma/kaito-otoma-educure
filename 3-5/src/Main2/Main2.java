@@ -8,8 +8,7 @@ public class Main2 {
     character.hp = 30;
     HealingPotion potion = new HealingPotion();
 
-    System.out.println("プレイヤー名:" + character.name);
-    System.out.println("プレイヤーのＨＰ:" + character.hp);
+    character.displayInfo();
 
     potion.heal(character);
     System.out.println("プレイヤーのＨＰ:" + character.hp);
