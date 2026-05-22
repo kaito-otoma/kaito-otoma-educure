@@ -5,5 +5,5 @@ public class BankAccount {
 
 public BankAccount(int balance){
     this.balance = balance;
-}
+    }
 }

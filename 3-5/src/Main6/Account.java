@@ -4,16 +4,16 @@ public class Account {
     int accountNumber;
     int balance;
 
-    public Account(int accountNumber){
-        this.accountNumber = 12345;
-        this.balance = 0;
+    public Account(int accountNumber, int balance){
+        this.accountNumber = accountNumber;
+        this.balance = balance;
     }
-    public void deposit(Account sm) {
-        balance += 1000;
+    public void deposit(int dep) {
+        balance += dep;
         System.out.println( "残高:" + balance + "円");
     }
-    public void Withdrawal(Account sm) {
-        balance -= 500;
+    public void Withdrawal(int with) {
+        balance -= with;
         System.out.println( "出金後残高:" + balance + "円");
     }
 
