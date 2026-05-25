@@ -2,11 +2,11 @@ package Main6;
 
 public class Main6 {
     public static void main(String[] args) {
-    Account sm = new Account(12345, 0);
+    Account sm = new Account(12345);
     System.out.println("口座番号" + sm.accountNumber);
 
     sm.deposit(1000);
-    sm.Withdrawal(500);
+    sm.withdraw(500);
 
     }
 }
