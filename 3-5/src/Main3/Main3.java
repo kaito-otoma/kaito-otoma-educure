@@ -2,7 +2,7 @@ package Main3;
 
 public class Main3 {
     public static void main(String[] args) {
-    BankAccount account2 = new BankAccount(0);
+    BankAccount account2 = new BankAccount(5000);
     BankAccount account1 = account2;
     account2.balance = 3000;
 
