@@ -23,11 +23,27 @@ public class SavingsAccount implements BankAccount{
     public void withdraw(int amount){
         this.balance -= amount;
         System.out.println(amount + "円出金しました");
+    if(balance < 0){
+        System.out.println("お金を引き出すことが出来ませんでした");
+    }
     }
 
      @Override
     public void getBalance(){
-        System.out.println("残高" + this.balance);
+    if (balance < 0){
+        System.out.println("残高がありません");
+    } else {
+        System.out.println("残高:" + this.balance);
+        }
+    }
 
+    @Override
+    public void displayAccountlnfo(){
+        System.out.println("口座名義人:" + this.name);
+    if (balance < 0){
+        System.out.println("残高がありません");
+    } else {
+        System.out.println("残高:" + this.balance);
+        }
     }
 }
