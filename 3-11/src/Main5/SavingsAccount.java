@@ -15,12 +15,24 @@ public class SavingsAccount implements BankAccount{
 
     @Override
     public void deposit(int amount){
+        if (amount <= 0) {
+            System.out.println("無効な金額です。");
+            return;
+        }
+        if (this.balance  < amount){
+            System.out.println("お金を引き出すことが出来ませんでした");
+            return;
+        }
         this.balance += amount;
         System.out.println(amount + "円入金しました");
     }
 
     @Override
     public void withdraw(int amount){
+        if (amount <= 0) {
+            System.out.println("無効な金額です。");
+            return;
+        }
         this.balance -= amount;
         System.out.println(amount + "円出金しました");
     if(balance < 0){
@@ -30,15 +42,11 @@ public class SavingsAccount implements BankAccount{
 
      @Override
     public void getBalance(){
-    if (balance < 0){
-        System.out.println("残高がありません");
-    } else {
         System.out.println("残高:" + this.balance);
-        }
     }
 
     @Override
-    public void displayAccountlnfo(){
+    public void displayAccountInfo(){
         System.out.println("口座名義人:" + this.name);
     if (balance < 0){
         System.out.println("残高がありません");

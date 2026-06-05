@@ -6,6 +6,6 @@ public class Main5 {
 
         account.deposit(5000);
         account.withdraw(3000);
-        account.displayAccountlnfo();
+        account.displayAccountInfo();
 }
 }

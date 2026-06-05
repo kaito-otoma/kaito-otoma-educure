@@ -5,6 +5,6 @@ public class Main2 {
         Book book = new Book("java入門", "山田太郎", 2500, 2);
 
         book.displayInfo();
-        System.out.println(book.getStockStatus());
+        book.checkStock();
     }
 }
