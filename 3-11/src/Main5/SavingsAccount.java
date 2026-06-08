@@ -19,10 +19,6 @@ public class SavingsAccount implements BankAccount{
             System.out.println("無効な金額です。");
             return;
         }
-        if (this.balance  < amount){
-            System.out.println("お金を引き出すことが出来ませんでした");
-            return;
-        }
         this.balance += amount;
         System.out.println(amount + "円入金しました");
     }
@@ -33,16 +29,18 @@ public class SavingsAccount implements BankAccount{
             System.out.println("無効な金額です。");
             return;
         }
+            if(balance < 0){
+        System.out.println("お金を引き出すことが出来ませんでした");
+        return;
+    }
         this.balance -= amount;
         System.out.println(amount + "円出金しました");
-    if(balance < 0){
-        System.out.println("お金を引き出すことが出来ませんでした");
-    }
     }
 
      @Override
-    public void getBalance(){
+    public int getBalance(){
         System.out.println("残高:" + this.balance);
+        return this.balance;
     }
 
     @Override

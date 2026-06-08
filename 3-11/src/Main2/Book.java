@@ -15,7 +15,7 @@ public class Book extends Product{
     public void displayInfo(){
         System.out.println("書籍名：" + name);
         System.out.println("著者" + author);
-        System.err.println("価格" + price + "円");
+        System.out.println("価格" + price + "円");
     }
 
     @Override
