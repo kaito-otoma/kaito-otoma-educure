@@ -29,7 +29,7 @@ public class SavingsAccount implements BankAccount{
             System.out.println("無効な金額です。");
             return;
         }
-            if(balance < 0){
+            if(this.balance < amount){
         System.out.println("お金を引き出すことが出来ませんでした");
         return;
     }
