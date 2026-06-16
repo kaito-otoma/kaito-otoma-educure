@@ -5,9 +5,9 @@ public class Main4 {
         Book book = new Book("Java入門", false);
         Library library = new Library();
 
-        library.checkOut(book);
-        library.checkOut(book);
-        library.returnItem(book);
-        library.checkOut(book);
+        library.lendBook(book);
+        library.lendBook(book);
+        library.returnBook(book);
+        library.lendBook(book);
     }
 }

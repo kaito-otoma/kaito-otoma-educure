@@ -20,7 +20,16 @@ public class Product {
         System.out.println(amount + "個追加しました");
         System.out.println("在庫数:" + stock);
     }
-    public void reniveStock(int amount){
+    public void removeStock(int amount){
+        if (amount <= 0) {
+            System.out.println("エラー:在庫数には1以上の正の整数を指定してください。");
+            return;
+        }
+
+        if (this.stock < amount) {
+            System.out.println("エラー:在庫が不足しています");
+            return;
+        }
         stock -= amount;
         System.out.println("商品名:" + name);
         System.out.println(amount + "個販売しました");
