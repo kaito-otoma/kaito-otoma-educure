@@ -7,10 +7,10 @@ public class Wizard extends GameCharacter{
         super(name, hp);
         this.mp = mp;
     }
-    public void showStatus() {
-    System.out.println("名前：" + this.name);
-    System.out.println("HP：" + this.hp); 
-    System.out.println("MP：" + this.mp); 
 
+    public void showStatus() {
+        System.out.println("名前：" + this.name);
+        System.out.println("HP：" + this.hp); 
+        System.out.println("MP：" + this.mp); 
     }
 }

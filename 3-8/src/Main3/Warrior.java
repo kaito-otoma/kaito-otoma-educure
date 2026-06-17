@@ -10,7 +10,7 @@ public class Warrior extends Character{
     @Override
     public void showStatus() {
         super.showStatus();
-    System.out.println("職業：" + this.job); 
+        System.out.println("職業：" + this.job); 
 
     }
 }
