@@ -8,12 +8,12 @@ public class Account {
         this.accountNumber = accountNumber;
         this.balance = 0;
     }
-    public void deposit(int dep) {
-        balance += dep;
+    public void deposit(int amount) {
+        balance += amount;
         System.out.println( "残高:" + balance + "円");
     }
-    public void withdraw(int with) {
-        balance -= with;
+    public void withdraw(int amount) {
+        balance -= amount;
         System.out.println( "出金後残高:" + balance + "円");
     }
 

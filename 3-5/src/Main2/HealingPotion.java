@@ -1,7 +1,6 @@
 package Main2;
 
 public class HealingPotion {
-    int heal;
 
     public void heal(Player character) {
         character.hp += 50;
