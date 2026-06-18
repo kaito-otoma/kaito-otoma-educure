@@ -2,7 +2,7 @@ package Main4;
 
 public class Main4 {
     public static void main(String[] args) {
-        Book book = new Book("Java入門", false);
+        Book book = new Book("Java入門");
         Library library = new Library();
 
         library.lendBook(book);

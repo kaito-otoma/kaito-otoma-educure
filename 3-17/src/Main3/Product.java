@@ -15,6 +15,10 @@ public class Product {
         return this.stock;
     }
     public void addStock(int amount){
+        if (amount <= 0) {
+            System.out.println("エラー:追加する在庫数には1以上の整数を指定してください。");
+            return;
+        }
         stock += amount;
         System.out.println("商品名:" + name);
         System.out.println(amount + "個追加しました");
@@ -35,8 +39,5 @@ public class Product {
         System.out.println(amount + "個販売しました");
         System.out.println("在庫数:" + stock);
 
-       if(stock < amount){
-            System.out.println("エラー:在庫が不足しています");
-        }
     }
 }

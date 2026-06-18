@@ -20,10 +20,14 @@ public class Student {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            System.out.println("エラー：名前を設定してください（nullは不可）");
+            return;
+        }
         if (name.length() >= 1 && name.length() <= 20) {
             this.name = name;
         } else {
-            System.out.println("エラー：名前は0-20文字で設定してください");
+            System.out.println("エラー：名前は1-20文字で設定してください");
         }
     }
 }

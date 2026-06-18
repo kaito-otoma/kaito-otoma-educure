@@ -7,13 +7,13 @@ public class Library {
             System.out.println("エラー：この本は既に貸し出し中です");
         } else {
             book.setLent(true);
-            System.out.println("「" + book.getter() + "」が貸し出しました");
+            System.out.println("「" + book.getTitle() + "」が貸し出しました");
         }
     }
      public void returnBook(Book book) {
         if (book.isLent()) {
             book.setLent(false);
-            System.out.println("「" + book.getter() + "」が返却されました");
+            System.out.println("「" + book.getTitle() + "」が返却されました");
         } else {
             System.out.println("エラー：この本は貸し出されていません");
         }
