@@ -8,5 +8,6 @@ public class Main3 {
         product.removeStock(50);
         product.addStock(10);
         product.removeStock(50);
+        product.removeStock(500);
      }
 }
