@@ -9,10 +9,6 @@ public class SavingsAccount implements BankAccount{
         this.balance = balance;
     }
 
-    public void name(){
-        System.out.println("口座名義人:" + this.name);
-    }
-
     @Override
     public void deposit(int amount){
         if (amount <= 0) {
