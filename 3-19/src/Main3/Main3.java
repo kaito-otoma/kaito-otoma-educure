@@ -1,11 +1,10 @@
 package Main3;
 
 public class Main3 {
-    public static void main(String[] args) {
-        Library book = new Library();
+    public static void main(String[] args){
 
-        book.view();
-        book.borrowBook();
-        book.returnBook();
+        Library.view();
+        Library.borrowBook();
+        Library.returnBook();
     }
 }
