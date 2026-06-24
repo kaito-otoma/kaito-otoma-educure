@@ -5,6 +5,8 @@ public class Main3 {
 
         Library.view();
         Library.borrowBook();
+        Library.view();
         Library.returnBook();
+        Library.view();
     }
 }

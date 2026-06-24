@@ -1,12 +1,12 @@
 package Main1;
 
 public class Product {
-    String name;
-    int price;
+    private static String name;
+    private static int price;
 
     public Product(String name, int price){
-        this.name = name;
-        this.price = price;
+        Product.name = name;
+        Product.price = price;
     }
 
     @Override
