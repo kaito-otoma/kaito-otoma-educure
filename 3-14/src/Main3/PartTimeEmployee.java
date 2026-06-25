@@ -5,9 +5,13 @@ public class PartTimeEmployee extends Employee{
     int hoursWorked;
 
     public PartTimeEmployee(String name, int hourlyWage, int hoursWorked){
-        super(name, "パートタイム");
+        super(name);
         this.hourlyWage = hourlyWage;
         this.hoursWorked = hoursWorked;
+    }
+    @Override
+    public String role(){
+        return "PartTimeEmployee";
     }
 
     @Override

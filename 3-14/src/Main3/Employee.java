@@ -2,11 +2,10 @@ package Main3;
 
 public abstract class Employee {
     String name;
-    String role;
+    abstract String  role();
 
-    public Employee(String name, String role){
+    public Employee(String name){
         this.name = name;
-        this.role = role;
     }
 
     public String getName (){
@@ -14,8 +13,12 @@ public abstract class Employee {
     }
 
     public String getRole(){
-    return this.role;
+        if(role().equals("PartTimeEmployee")){
+            return "パートタイム";
+    }else if(role().equals("RegularEmployee")){
+            return "正社員";
     }
-
+        return "その他";
+}
     public abstract int calculateSalary();
 }
