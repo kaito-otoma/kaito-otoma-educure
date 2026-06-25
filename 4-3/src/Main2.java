@@ -1,8 +1,11 @@
 public class Main2 {
     public static String shortenMessage(String message, int maxLength) {
+      if (message == null || message.length() <= maxLength) {
+            return message;
+        }
         StringBuilder shortenMessage = new StringBuilder();
-        shortenMessage.append("message", 0, 20);
-        return shortenMessage(message, maxLength);
+        shortenMessage.append(message, 0, maxLength);
+        return shortenMessage.toString();
     }
     public static void main(String[] args) {
         String message = "これは非常に長いチャットメッセージです。省略する必要があります。";
