@@ -4,7 +4,7 @@ public class Main2 {
             return message;
         }
         StringBuilder shortenMessage = new StringBuilder();
-        shortenMessage.append(message, 0, maxLength);
+        shortenMessage.append(message, 0, maxLength).append("...");
         return shortenMessage.toString();
     }
     public static void main(String[] args) {
