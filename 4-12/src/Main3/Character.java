@@ -15,7 +15,7 @@ public class Character implements Comparable<Character>{
     }
     @Override
     public int compareTo(Character other) {
-        return Integer.compare(this.getBattlePower(), other.getBattlePower());
+        return Integer.compare(other.getBattlePower(), this.getBattlePower());
     }
 
     @Override
