@@ -12,22 +12,30 @@ public class Main5 {
         player.addEquipment(shoes);
 
         System.out.println("--- キャラクター装備情報 ---");
-        player.sortEquipment();//武器のソート用
+        player.sortEquipment();
         player.showEquipment();
 
-        Equipment sword2 = sword.clone();//剣の複製
+        Equipment sword2 = sword.clone();
 
         int result = sword.compareTo(shield);
 
-        if (result < 0) {
-            System.out.println(); //swordの方が強い
-        } else if (result > 0) {
-            System.out.println();//shieldの方強い
+        System.out.println("\n--- テスト結果確認 ---");
+        if (sword2 != null && sword.equals(sword2)) {
+            System.out.println("武器の複製テスト：ＯＫ (" + sword2.toString() + " が正しく複製されました)");
         } else {
-            System.out.println();//同性能
+            System.out.println("武器の複製テスト：ＮＧ");
         }
-        System.out.println("武器の複製テスト：ＯＫ");
-        System.out.println("武器の比較テスト：ＯＫ");
-        System.out.println("武器の強さソート：ＯＫ");
+
+        if (result < 0) {
+            System.out.println("武器の比較テスト：ＯＫ");
+        } else {
+            System.out.println("武器の比較テスト：ＮＧ");
+        }
+
+        if (player.isEquipmentSorted()) {
+            System.out.println("武器の強さソート：ＯＫ");
+        } else {
+            System.out.println("武器の強さソート：ＮＧ");
+        }
     }
 }

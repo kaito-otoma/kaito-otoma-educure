@@ -3,15 +3,15 @@ package Main3;
 public class Character implements Comparable<Character>{
     private String name;
     private int hp;
-    private int Power;
+    private int power;
 
     public Character (String name, int hp, int Power){
         this.name = name;
         this.hp = hp;
-        this.Power = Power;
+        this.power = Power;
     }
     public int getBattlePower(){
-        return hp + Power;
+        return hp + power;
     }
     @Override
     public int compareTo(Character other) {
@@ -20,6 +20,6 @@ public class Character implements Comparable<Character>{
 
     @Override
     public String toString(){
-        return this.name + "(HP:" + this.hp + "攻撃力:" + this.Power + ")";
+        return this.name + "(HP:" + this.hp + "攻撃力:" + this.power + ")";
     }
 }
