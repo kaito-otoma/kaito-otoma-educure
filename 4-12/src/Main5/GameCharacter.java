@@ -17,7 +17,7 @@ public class GameCharacter {
     public void showEquipment() {
         System.out.println(this.name + " の装備一覧:");
         for (int i = 0; i < weapons.size(); i++) {
-            System.out.println((i + 1) + ": " + weapons.get(i));
+            System.out.println((i + 1) + ". " + weapons.get(i));
         }
     }
     public void sortEquipment() {

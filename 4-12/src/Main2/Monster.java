@@ -18,6 +18,7 @@ public class Monster {
     public boolean equals(Object monsters){
         if (monsters == this) return true;
         if (monsters == null) return false;
+        if (!(monsters instanceof Monster)) return false;
 
         Monster other = (Monster)monsters;
         return this.name.equals(other.name) &&

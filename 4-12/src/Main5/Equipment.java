@@ -27,7 +27,7 @@ public class Equipment implements Cloneable, Comparable<Equipment>{
     @Override
     public boolean equals(Object clones){
         if (this == clones) return true;
-        if (clones == null)return false;
+        if (clones == null || getClass() != clones.getClass())return false;
         Equipment other = (Equipment) clones;
         return power == other.power &&
                guard == other.guard &&
