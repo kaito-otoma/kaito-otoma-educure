@@ -14,13 +14,13 @@ public class GameCharacter {
     public void addEquipment(Equipment equipment) {
         this.weapons.add(equipment);
     }
-    public void showEquipment() {
+    public void showEquipments() {
         System.out.println(this.name + " の装備一覧:");
         for (int i = 0; i < weapons.size(); i++) {
             System.out.println((i + 1) + ". " + weapons.get(i));
         }
     }
-    public void sortEquipment() {
+    public void sortEquipments() {
         java.util.Collections.sort(this.weapons);
     }
 

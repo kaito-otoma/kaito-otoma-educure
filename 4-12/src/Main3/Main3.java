@@ -1,6 +1,8 @@
 package Main3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Main3 {
         public static void main(String[] args) {
@@ -11,8 +13,9 @@ public class Main3 {
         characterList.add(new Character("戦士C", 80, 40));
 
         System.out.println("---戦闘力順---");
+        Collections.sort(characterList, Comparator.naturalOrder());
         for (Character list : characterList) {
-                System.out.println(list + "戦闘力:" + list.getBattlePower());
+                System.out.println(list.toString() + "戦闘力:" + list.getBattlePower());
         }
     }
 }

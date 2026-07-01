@@ -12,8 +12,8 @@ public class Main5 {
         player.addEquipment(shoes);
 
         System.out.println("--- キャラクター装備情報 ---");
-        player.sortEquipment();
-        player.showEquipment();
+        player.showEquipments();
+        player.sortEquipments();
 
         Equipment sword2 = sword.clone();
 
