@@ -15,7 +15,7 @@ public class Main3 {
         System.out.println("---戦闘力順---");
         Collections.sort(characterList, Comparator.naturalOrder());
         for (Character list : characterList) {
-                System.out.println(list.toString() + "戦闘力:" + list.getBattlePower());
+                System.out.println(list);
         }
     }
 }

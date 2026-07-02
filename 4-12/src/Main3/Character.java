@@ -20,6 +20,6 @@ public class Character implements Comparable<Character>{
 
     @Override
     public String toString(){
-        return this.name + "(HP:" + this.hp + "攻撃力:" + this.power + ")";
+        return this.name + "(HP:" + this.hp + "攻撃力:" +  this.power  + "戦闘力:" + getBattlePower()+ ")";
     }
 }
