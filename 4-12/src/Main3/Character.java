@@ -5,10 +5,10 @@ public class Character implements Comparable<Character>{
     private int hp;
     private int power;
 
-    public Character (String name, int hp, int Power){
+    public Character (String name, int hp, int power){
         this.name = name;
         this.hp = hp;
-        this.power = Power;
+        this.power = power;
     }
     public int getBattlePower(){
         return hp + power;

@@ -2,7 +2,6 @@ package Main3;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Main3 {
         public static void main(String[] args) {
@@ -13,7 +12,7 @@ public class Main3 {
         characterList.add(new Character("戦士C", 80, 40));
 
         System.out.println("---戦闘力順---");
-        Collections.sort(characterList, Comparator.naturalOrder());
+        Collections.sort(characterList);
         for (Character list : characterList) {
                 System.out.println(list);
         }
