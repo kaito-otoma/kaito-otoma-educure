@@ -1,10 +1,10 @@
 package Main1;
 
 public class Fruit {
-    private Object name;
-    private Object price;
+    private String name;
+    private int price;
     
-    public void setData(Object name, Object price) {
+    public void setData(String name, int price) {
         this.name = name;
         this.price = price;
     }

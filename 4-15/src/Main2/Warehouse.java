@@ -5,7 +5,7 @@ public class Warehouse<T> {
 
     public void store(T item) {
         this.item = item;
-        System.out.println("商品追加: [" + item + "]");
+        System.out.println("商品追加: " + item );
     }
     
     public T retrieve() {
@@ -13,7 +13,7 @@ public class Warehouse<T> {
         this.item = null;
 
         if (itemList != null) {
-            System.out.println("取り出し: [" + itemList + "]");
+            System.out.println("取り出し: " + itemList);
         } else {
             System.out.println("取り出し: [商品は入っていません]");
         }
