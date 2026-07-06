@@ -10,9 +10,9 @@ public class Fruit {
     }
     
     public void displayInfo() {
-        String fruitName = (String) name;
+
         int fruitPrice = (Integer) price;
-        System.out.println("果物: " + fruitName);
+        System.out.println("果物: " + name);
         System.out.println("価格: " + fruitPrice + "円");
     }
 }

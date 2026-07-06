@@ -20,12 +20,13 @@ public class Inventory<T> {
     }
 
     public T getCurrentStock() {
-        if (item != null) {
-            System.out.println(category.getDisplayName() + ":" + item );
-            return item;
-        } else {
-            System.out.println(category.getDisplayName() + ": なし");
-            return item;
-        }
+        return item;
+    }
+
+    public String getWrappedStock() {
+        return this.item != null ? this.item.toString() : "なし";
+    }
+    public ProductCategory getCategory() {
+        return this.category;
     }
 }

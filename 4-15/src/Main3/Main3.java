@@ -15,9 +15,10 @@ public class Main3 {
         System.out.println(fruits.stockOut() + "を出荷しました");
         
         System.out.println("現在の在庫状態:");
-        fruits.getCurrentStock();
-        vegetables.getCurrentStock();
-        dairy.getCurrentStock();
+        System.out.println(fruits.getCategory().getDisplayName() + ":" + fruits.getWrappedStock());
+        System.out.println(vegetables.getCategory().getDisplayName() + ":" + vegetables.getWrappedStock());
+        System.out.println(dairy.getCategory().getDisplayName() + ":" + dairy.getWrappedStock());
+
 
     }
 }

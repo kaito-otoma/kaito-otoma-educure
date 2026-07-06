@@ -10,7 +10,7 @@ public class Product {
     }
     
     public void decreaseStock() {
-        if (stock < 0){
+        if (stock > 0){
             this.stock --;
         } else {
         }

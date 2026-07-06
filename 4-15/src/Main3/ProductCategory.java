@@ -12,6 +12,6 @@ package Main3;
     }
     
     public String getDisplayName() {
-        return displayName;
+        return this.displayName;
     }
 }
