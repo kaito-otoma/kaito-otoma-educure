@@ -1,12 +1,13 @@
 package junit4;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
 public class DividerTest {
-     @Test
+    @Test
     void testNormalDivision() {
         Divider divider = new Divider();
         assertEquals(3.0, divider.divide(6.0, 2.0), 0.0001, "6 ÷ 2 は 3 になるはず");
@@ -24,5 +25,12 @@ public class DividerTest {
         } catch (IllegalArgumentException e) {
             assertEquals("ゼロで除算はできません", e.getMessage());
         }
+
+        IllegalArgumentException exception = assertThrows(
+        IllegalArgumentException.class, 
+        () -> divider.divide(5.0, 0.0)
+    );
+    assertEquals("ゼロで除算はできません", exception.getMessage());
     }
+    
 }

@@ -20,7 +20,6 @@ public class RPGCharacter  {
         mp += 5;
     }
     
-    // getterメソッドを追加
     public int getLevel() { return level; }
     public int getHP() { return hp; }
     public int getMP() { return mp; }
