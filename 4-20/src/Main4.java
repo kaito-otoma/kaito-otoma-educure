@@ -10,7 +10,7 @@ public class Main4 {
         Path archiveDir = Paths.get("archive");
 
         Path backupTarget = backupDir.resolve(source.getFileName());
-        Path archiveTarget = archiveDir.resolve(source.getFileName());
+        Path archiveTarget = archiveDir.resolve("archive").resolve(source.getFileName());
 
         try {
             if (!Files.exists(source)) {

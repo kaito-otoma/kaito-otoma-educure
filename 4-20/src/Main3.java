@@ -12,7 +12,7 @@ public class Main3 {
             System.out.println("フォルダの作成に失敗しました。");
         }
 
-        File file = new File("exercise_file.txt");
+        File file = new File(folder, "exercise_file.txt");
         try {
             if (file.createNewFile()) {
                 System.out.println("ファイルを作成しました。");
