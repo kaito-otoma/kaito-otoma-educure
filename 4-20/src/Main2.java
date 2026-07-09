@@ -10,7 +10,7 @@ public class Main2 {
             }
             reader.close();
         } catch(IOException error) {
-            error.printStackTrace();
+            System.out.println("ファイルの読み込み中にエラーが発生しました。");
         }
     }
 }

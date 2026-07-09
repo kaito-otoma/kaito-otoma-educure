@@ -10,7 +10,7 @@ public class Main4 {
         Path archiveDir = Paths.get("archive");
 
         Path backupTarget = backupDir.resolve(source.getFileName());
-        Path archiveTarget = archiveDir.resolve("archive").resolve(source.getFileName());
+        Path archiveTarget = archiveDir.resolve(source.getFileName());
 
         try {
             if (!Files.exists(source)) {
@@ -27,11 +27,19 @@ public class Main4 {
 
             Files.copy(source, backupTarget);
             System.out.println("ファイルが 'backup/' にコピーされました。");   
-            System.out.println("コピーの確認: 成功");
-
+            if (Files.exists(backupTarget)) {
+                System.out.println("コピーの確認: 成功");
+            } else {
+                System.out.println("コピーの確認: 失敗");
+            }
+            
             Files.move(source, archiveTarget);
             System.out.println("ファイルが 'archive/' に移動されました。");
-            System.out.println("移動の確認: 成功");
+            if (Files.exists(archiveTarget) && !Files.exists(backupTarget)) {
+                System.out.println("移動の確認: 成功");
+            } else {
+                System.out.println("移動の確認: 失敗");
+            }
 
         } catch (IOException error) {
             error.printStackTrace();

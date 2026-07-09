@@ -7,7 +7,7 @@ public class Main3 {
         if (folder.exists()) {
             System.out.println("フォルダは既に存在します。");
         } else if (folder.mkdir()) {
-            System.out.println("フォルダの作成しました。");
+            System.out.println("フォルダを作成しました。");
         } else {
             System.out.println("フォルダの作成に失敗しました。");
         }
