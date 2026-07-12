@@ -33,7 +33,7 @@ public class Main4 {
                 System.out.println("コピーの確認: 失敗");
             }
             
-            Files.move(source, archiveTarget);
+            Files.move(backupTarget, archiveTarget);
             System.out.println("ファイルが 'archive/' に移動されました。");
             if (Files.exists(archiveTarget) && !Files.exists(backupTarget)) {
                 System.out.println("移動の確認: 成功");
