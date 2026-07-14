@@ -21,8 +21,8 @@ public class Main2 {
 
     try (FileInputStream input = new FileInputStream(filePath)) {
         properties.load(input);
-        System.out.println("Username: " + properties.getProperty("username"));
-        System.out.println("password: " + properties.getProperty("password"));
+        System.out.println("Username=" + properties.getProperty("username"));
+        System.out.println("password=" + properties.getProperty("password"));
     } catch (IOException e) {
         e.printStackTrace();
         }

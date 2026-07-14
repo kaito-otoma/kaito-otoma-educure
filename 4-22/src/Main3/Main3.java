@@ -20,16 +20,17 @@ public class Main3 {
 
             Element root = document.getDocumentElement();
 
-            Book book = new Book();
-            book.settitle(getTagValue("title", root));
-            book.setauthor(getTagValue("author", root));
-            book.setprice(getTagValue("price", root));
+            String title = getTagValue("title", root);
+            String author = getTagValue("author", root);
+            int price = Integer.parseInt(getTagValue("price", root));
 
-            System.out.println("タイトル: " + book.gettitle());
-            System.out.println("著者: " + book.getauthor());
-            System.out.println("価格: " + book.getprice());
+            Book book = new Book(title, author, price);
+
+            System.out.println("タイトル: " + book.getTitle());
+            System.out.println("著者: " + book.getAuthor());
+            System.out.println("価格: " + book.getPrice());
         } catch (Exception e) {
-            e.printStackTrace(); // エラーハンドリング
+            e.printStackTrace();
         }
     }
     private static String getTagValue(String tagName, Element element) {

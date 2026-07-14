@@ -4,14 +4,19 @@ public class Book {
     
     private String title;
     private String author;
-    private String price;
+    private int price;
 
-    // ゲッターメソッド
-    public String gettitle() { return title; }
-    public String getauthor() { return author; }
-    public String getprice() { return price; }
+    public Book(String title, String author, int price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
 
-    public void settitle(String title) { this.title = title; }
-    public void setauthor(String author) { this.author = author; }
-    public void setprice(String price) { this.price = price; }
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public int getPrice() { return price; }
+
+    public void setTitle(String title) { this.title = title; }
+    public void setAuthor(String author) { this.author = author; }
+    public void setPrice(int price) { this.price = price; }
 }

@@ -11,7 +11,7 @@ public class Main4 {
         Gson gson = new Gson();
 
     try (FileReader reader = new FileReader(json)) {
-        Employee person = gson.fromJson(json, Employee.class);
+        Employee person = gson.fromJson(reader, Employee.class);
         
         System.out.println("Name: " + person.getName());
         System.out.println("Age: " + person.getAge());
