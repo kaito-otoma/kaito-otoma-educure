@@ -7,20 +7,16 @@ import java.net.URLEncoder;
 public class Main2 {
     public static void main(String[] args) {
         try {
-            // 検索キーワードをCQL形式で設定
-            String query = "title = Java"; // CQLフォーマット
+            String query = "title = Java";
             String encodedQuery = URLEncoder.encode(query, "UTF-8");
 
-            // 国立国会図書館APIのエンドポイント
             String endpoint = "https://ndlsearch.ndl.go.jp/api/sru";
 
-            // APIリクエストのURLを構築
             String requestUrl = endpoint + "?operation=searchRetrieve"
                 + "&version=1.2"
                 + "&query=" + encodedQuery
                 + "&maximumRecords=10"
                 + "&recordSchema=dc";
-            // ここにコードを書いてください
             URL url = new URL(requestUrl);
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
