@@ -26,22 +26,18 @@ public class WordManager {
         return true;
     }
 
-    // 現在の登録件数を取得
     public int getCount() {
         return englishList.size();
     }
 
-    // 指定したインデックスの英単語を取得
     public String getEnglish(int index) {
         return englishList.get(index);
     }
 
-    // 指定したインデックスの日本語訳を取得
     public String getJapanese(int index) {
         return japaneseList.get(index);
     }
 
-    // CSVファイルからインポート
     public void importFromCSV(String fileName, Scanner scanner) {
         String filePath = scanner.nextLine();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
