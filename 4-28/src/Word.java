@@ -1,25 +1,14 @@
-import java.util.Scanner;
-
-
 public class Word {
-    public static void start(WordManager manager, Scanner scanner) {
-        
-            System.out.print("英単語を入力してください: ");
-            String eng = scanner.nextLine();
+    private String english;
+    private String japanese;
 
-            System.out.print("日本語訳を入力してください: ");
-            String jap = scanner.nextLine();
-
-            if (eng.trim().isEmpty() || jap.trim().isEmpty()) {
-                System.out.println("空白は使用できません。");
-                return;
-            }
-            
-            boolean isSuccess = manager.addWord(eng, jap);
-        if (isSuccess) {
-            System.out.println("単語を登録しました。");
-        }else{
-            System.out.println("空白は使用できません");
-        }
+    public Word(String english, String japanese) {
+        this.english = english;
+        this.japanese = japanese;
     }
+
+    public String getEnglish() { return english; }
+    public String getJapanese() { return japanese; }
+    public void setEnglish(String english) { this.english = english; }
+    public void setJapanese(String japanese) { this.japanese = japanese; }
 }

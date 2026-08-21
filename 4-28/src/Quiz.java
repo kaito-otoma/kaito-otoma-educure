@@ -1,26 +1,49 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Quiz {
-    public static void start(WordManager manager, Scanner scanner){
-    int score = 0;
-    int totalQuestions = manager.getCount();
+    private WordManager wordManager;
+    private int score;
+    private int totalQuestions;
+    
+    private List<Integer> indices;
+    private int currentIndex;
 
-    for (int test = 0; test < totalQuestions; test++){
+    public Quiz(WordManager wordManager) {
+        this.wordManager = wordManager;
+        this.score = 0;
+        this.totalQuestions = wordManager.getWordCount();
+        this.currentIndex = 0;
         
-        System.out.println("問題：" + manager.getEnglish(test));
-        System.out.print("解答：");
-        String answer = scanner.nextLine();
-        
-        boolean modelAnswer = answer.equals(manager.getJapanese(test));
-
-        if (modelAnswer) {
-            System.out.println("正解です！");
-            score++;
-        }else{
-            System.out.println("不正解です。正解は" + manager.getJapanese(test) + "でした。");
-            }
+        this.indices = new ArrayList<>();
+        for (int i = 0; i < this.totalQuestions; i++) {
+            this.indices.add(i);
         }
-            System.out.println("成績表示：" + totalQuestions + "問中" + score + "問正解でした！");
-        return;
+        Collections.shuffle(this.indices); 
     }
+
+    public Word getRandomWord() {
+        if (currentIndex >= indices.size()) {
+            return null;
+        }
+
+        List<Word> words = wordManager.getWords();
+        
+        int targetIndex = indices.get(currentIndex);
+        currentIndex++;
+        
+        return words.get(targetIndex);
+    }
+
+    public boolean checkAnswer(Word word, String answer) {
+        if (word.getJapanese().equals(answer.trim())) {
+            score++;
+            return true;
+        }
+        return false;
+    }
+
+    public int getScore() { return score; }
+    public int getTotalQuestions() { return totalQuestions; }
 }
