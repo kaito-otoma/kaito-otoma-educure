@@ -1,0 +1,8 @@
+educure_db=# SELECT name, department
+educure_db-# FROM employees
+educure_db-# WHERE department != '営業' AND salary >= 55000;
+
+   name    |   department
+-----------+----------------
+ 田村 花子 | マーケティング
+(1 行)
