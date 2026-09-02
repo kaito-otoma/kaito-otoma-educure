@@ -1,0 +1,9 @@
+SELECT title, publication_year
+FROM books
+WHERE author = '田中 一郎';
+
+   title   | publication_year
+-----------+------------------
+ 過去のSQL |             1999
+ 現在のSQL |             2005
+(2 行)
