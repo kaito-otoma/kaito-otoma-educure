@@ -1,6 +1,6 @@
 educure_db=# SELECT title, author, publication_year, genre, loan_date
 educure_db-# FROM books
-educure_db-#  WHERE publication_year > 2000 AND genre = '小説'
+educure_db-#  WHERE publication_year >= 2000 AND genre = '小説'
 educure_db-# ORDER BY publication_year DESC;
 
        title        |  author   | publication_year | genre | loan_date
