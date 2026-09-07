@@ -1,6 +1,6 @@
-educure_db=# INSERT INTO employees (employee_id, name, department, salary, hire_date)
-educure_db-# VALUES (6, '鳥山 信夫', 'IT', 60000, '2023-09-15'),
-educure_db-# (7, '山本 三郎', '開発', 58000, '2023-09-20');
+educure_db=# INSERT INTO employees (name, department, salary, hire_date)
+educure_db-# VALUES ('鳥山 信夫', 'IT', 60000, '2023-09-15'),
+educure_db-# ('山本 三郎', '開発', 58000, '2023-09-20');
 INSERT 0 2
 
 educure_db=# SELECT * FROM employees;

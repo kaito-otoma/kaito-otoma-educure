@@ -1,6 +1,6 @@
 educure_db=# SELECT name, salary
 educure_db-# FROM employees
-educure_db-# WHERE salary > 50000;
+educure_db-# WHERE salary >= 50000;
 
    name    | salary
 -----------+--------
