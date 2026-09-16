@@ -1,6 +1,6 @@
 educure_db=# SELECT name, department
 educure_db-# FROM employees
-educure_db-# WHERE department = '営業' OR department = '開発' department = 'IT';
+educure_db-# WHERE department = '営業' OR department = '開発' OR  department = 'IT';
 
    name    | department
 -----------+------------
