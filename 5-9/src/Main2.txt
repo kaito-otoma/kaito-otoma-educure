@@ -1,6 +1,6 @@
 educure_db=# SELECT name, salary
 educure_db-# FROM employees
-educure_db-# ORDER BY salary DESC;
+educure_db-# ORDER BY salary DESC, name_kana ASC;
 
     name     | salary
 -------------+--------
