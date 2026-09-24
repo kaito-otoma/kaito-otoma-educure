@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class SearchProduct {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/educure_db"; // データベースURL
-        String user = "postgres"; // データベースのユーザー名
-        String password = "CYV94XpcfV"; // データベースのパスワード
+        String url = "jdbc:postgresql://localhost:5432/educure_db";
+        String user = "postgres";
+        String password = "CYV94XpcfV";
         
         String query = "SELECT product_name, price FROM products WHERE price >= ?";
         

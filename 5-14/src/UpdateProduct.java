@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 public class UpdateProduct {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/educure_db"; // データベースURL
-        String user = "postgres"; // データベースのユーザー名
-        String password = "CYV94XpcfV"; // データベースのパスワード
+        String url = "jdbc:postgresql://localhost:5432/educure_db";
+        String user = "postgres";
+        String password = "CYV94XpcfV";
         
         String updatePriceSQL = "UPDATE products SET price = price - 5000 WHERE product_name = 'タブレット'";
         String updateStockSQL = "UPDATE products SET stock = stock + 5 WHERE price < 50000";
