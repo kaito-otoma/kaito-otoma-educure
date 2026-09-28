@@ -1,105 +1,106 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
 
+public class WordManager {
+    private DBManager dbManager;
 
-public class WordManager extends DBManager{
-    private ArrayList<String> englishList = new ArrayList<>();
-    private ArrayList<String> japaneseList = new ArrayList<>();
-
-      public boolean addWord(String english, String japanese) {
-        if (english.trim().isEmpty() || japanese.trim().isEmpty()) {
-            System.out.println("空白は使用できません。");
-        return false;
-        }
-
-        if (englishList.size() >= 1000) {
-            System.out.println("登録可能な単語数は1000個までです");
-            return false;
-        }
-        englishList.add(english);
-        japaneseList.add(japanese);
-        return true;
+    public WordManager(DBManager dbManager) {
+        this.dbManager = dbManager;
     }
 
-     public void saveToDB() {
-        String checkSql = "SELECT COUNT(*) FROM words WHERE english = ?";
-        String insertSql = "INSERT INTO words (english, japanese) VALUES (?, ?)";
+    public void addWord(Word word) {
+        if (getWordCount() >= 1000) {
+            System.out.println("エラー: 文字数制限（最大100文字）を超過しています。");
+            return;
+        }
 
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-             PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-             PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+        String checkSql = "SELECT COUNT(*) FROM words WHERE english = ?;";
+        String insertSql = "INSERT INTO words (english, japanese) VALUES (?, ?);";
+
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
             
-            for (int i = 0; i < englishList.size(); i++) {
-                String eng = englishList.get(i);
-                String jap = japaneseList.get(i);
-
-                checkStmt.setString(1, eng);
-                try (ResultSet rs = checkStmt.executeQuery()) {
-                    if (rs.next() && rs.getInt(1) > 0) {
-                        continue;
-                    }
+            checkStmt.setString(1, word.getEnglish());
+            try (ResultSet rs = checkStmt.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    return; 
                 }
-
-                insertStmt.setString(1, eng);
-                insertStmt.setString(2, jap);
-                insertStmt.addBatch(); 
             }
-            
+
+            try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+                insertStmt.setString(1, word.getEnglish());
+                insertStmt.setString(2, word.getJapanese());
+                insertStmt.executeUpdate();
+            }
+
         } catch (SQLException e) {
-            System.out.println("DBへの追加中にエラーが発生しました: " + e.getMessage());
+            System.out.println("エラー: 単語の登録に失敗しました。");
         }
     }
-    public int getCount() {
-        return englishList.size();
-    }
 
-    public String getEnglish(int index) {
-        return englishList.get(index);
-    }
-
-    public String getJapanese(int index) {
-        return japaneseList.get(index);
-    }
-
-    public void importFromCSV(String fileName, Scanner scanner) {
-        String filePath = scanner.nextLine();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            englishList.clear(); 
-            japaneseList.clear();
-            
-            while ((line = br.readLine()) != null) {
-
-                String[] data = line.split(",");
-                if (data.length == 2) {
-                    englishList.add(data[0].trim()); 
-                    japaneseList.add(data[1].trim()); 
-                }
+    public List<Word> getWords() {
+        List<Word> words = new ArrayList<>();
+        String sql = "SELECT english, japanese FROM words;";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            while (rs.next()) {
+                words.add(new Word(rs.getString("english"), rs.getString("japanese")));
             }
-            System.out.println(getCount() + "件の単語をインポートしました。");
-        } catch (IOException e) {
-            System.out.println("ファイルの読み込みに失敗しました: " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("エラー: 単語リストの取得に失敗しました。");
+        }
+        return words;
+    }
+
+    public int getWordCount() {
+        String sql = "SELECT COUNT(*) FROM words;";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.out.println("エラー: 単語数の取得に失敗しました。");
+        }
+        return 0;
+    }
+
+    public void deleteWord(String english) {
+        String sql = "DELETE FROM words WHERE english = ?;";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, english);
+            int rows = pstmt.executeUpdate();
+            if (rows == 0) {
+                System.out.println("エラー: 指定された英単語「" + english + "」は登録されていません。");
+            } else {
+                System.out.println("単語の削除に成功しました。");
+            }
+        } catch (SQLException e) {
+            System.out.println("エラー: 削除に失敗しました。");
         }
     }
-    public void exportToCSV(String fileName) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
-            for (int i = 0; i < englishList.size(); i++) {
-                bw.write(englishList.get(i) + "," + japaneseList.get(i));
-                bw.newLine();
+
+    public void updateWord(String english, String newJapanese) {
+        String sql = "UPDATE words SET japanese = ? WHERE english = ?;";
+        try (Connection conn = dbManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, newJapanese);
+            pstmt.setString(2, english);
+            int rows = pstmt.executeUpdate();
+            if (rows == 0) {
+                System.out.println("エラー: 指定された英単語「" + english + "」は登録されていません。");
+            }else {
+                System.out.println("単語の更新に成功しました。");
             }
-            System.out.println("CSVファイルへのエクスポートが完了しました。");
-        } catch (IOException e) {
-            System.out.println("ファイルの書き込みに失敗しました: " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("エラー: 更新に失敗しました。");
         }
     }
 }
